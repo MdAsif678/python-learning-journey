@@ -47,35 +47,3 @@ class PQueue:
         print("="*100)
 
     
-
-
-pq = PQueue()
-print(pq.isempty())
-pq.enqueue(10,100)
-pq.enqueue(20,200)
-pq.enqueue(30,1000)
-pq.enqueue(40,200)
-pq.enqueue(50,10000)
-print(pq.isempty())
-pq.display()
-print(pq.peek())
-pq.dequeue()
-pq.display()
-print(pq.peek())
-
-pq.dequeue()
-pq.display()
-print(pq.peek())
-
-pq.dequeue()
-pq.display()
-print(pq.peek())
-
-pq.dequeue()
-pq.display()
-print(pq.peek())
-
-pq.dequeue()
-pq.display()
-
-print(pq.isempty())
