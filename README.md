@@ -9,6 +9,7 @@ Welcome to my Python practice repository! This repo tracks my progressive learni
 ├── 01_beginner_projects/                # 14 Beginner Python Projects
 ├── 02_oops_practice/                    # Object-Oriented Programming Implementations
 ├── 03_dsa/                              # Data Structures & Sorting Algorithms
+│   ├── algorithms/ 
 │   ├── data_structures/
 │   └── sorting_algorithms/
 └── 04_mini_projects/                    # Standalone CLI & Utility Projects
