@@ -2,76 +2,64 @@
 # |       |
 # |       |
 # C ----- D
-
-graph = [
-    [0,1,1,0],
-    [1,0,0,1],
-    [1,0,0,1],
-    [0,1,1,0]
-]
-
-# A --5-- B
-# |       |
-# 2       7
-# |       |
-# C --3-- D
-
-graph2 = [
-    [0,5,2,0],
-    [5,0,0,7],
-    [2,0,0,3],
-    [0,7,3,0]
-]
+#  \     /
+#    \ E
+# Adjacency list
 
 # A ----- B
 # |       |
 # |       |
 # C ----- D
+#         |
+#         E
+
+# A ----- B
+# |     / |
+# |   /   |
+# C ----- D
 #  \     /
 #    \ E
-# Adjacency list
-
-
 
 class Queue:
     def __init__(self):
         self.queue = []
 
-    def enqueue(self,num):
+    def enqueue(self, num):
         self.queue.append(num)
 
     def dequeue(self):
         if len(self.queue) == 0:
-            print("Queue is empty, nothing to dequeue")
+            print("Queue is empty")
             return
         popped = self.queue.pop(0)
         return popped
 
     def display(self):
         if len(self.queue) == 0:
-            print("Queue is empty, nothing to display")
+            print("Queue is empty")
             return
+
         return self.queue
 
 
-graph3 = {
-    'A':['B','C'],
-    'B':['A','D'],
-    'C':['A','D','E'],
-    'D':['B','C','E'],
-    'E':['C','D']
+graph = {
+    "A":["B","C"],
+    "B":["A","C","D"],
+    "C":["A","B","D","E"],
+    "D":["B","C","E"],
+    "E":["C","D"]
 }
 
 bfs = Queue()
-bfs.enqueue('A')
+bfs.enqueue("C")
 visited = set()
 
 while len(bfs.queue) != 0:
     element = bfs.dequeue()
-    print(f"Visited {element}")
+    print(f"Searched element {element}")
     visited.add(element)
 
-    for neighbour in graph3[element]:
+    for neighbour in graph[element]:
         if neighbour not in visited:
             bfs.enqueue(neighbour)
             visited.add(neighbour)
